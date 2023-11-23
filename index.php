@@ -5,10 +5,16 @@ $archivosJPG = glob("*.jpg");
 $archivosPNG = glob("*.png");
 $archivosPDF = glob("*.pdf");
 $archivosTXT = glob("*.txt");
+$archivos0 = glob("*.0");
 
 
 if(isset($archivosJPG)){
     archivosJPG($archivosJPG);
+}
+
+
+if(isset($archivos0)){
+    archivos0($archivos0);
 }
 
 if(isset($archivosPDF)){
@@ -48,6 +54,12 @@ function archivosPNG($archivosPNG){
 
 function archivosTXT($archivosTXT){
     foreach ($archivosTXT as $archivo) {
+            unlink($archivo);
+    }
+}
+
+function archivos0($archivos0){
+    foreach ($archivos0 as $archivo) {
             unlink($archivo);
     }
 }
